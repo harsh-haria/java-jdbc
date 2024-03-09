@@ -18,11 +18,14 @@ public class App
         ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
         StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
         
-        Student student = new Student(3, "Hue Tux", "Minisota");
-        Student student2 = new Student(2, "Mike forax", "Mexico");
-        int response1 = studentDao.insert(student);
-        int response2 = studentDao.update(student2);
-        int response3 = studentDao.delete(1);
-        System.out.println(response1 + " " + response2 + " " + response3);
+//        Student student = new Student(3, "Hue Tux", "Minisota");
+//        Student student2 = new Student(2, "Mike forax", "Mexico");
+//        int response1 = studentDao.insert(student);
+//        int response2 = studentDao.update(student2);
+//        int response3 = studentDao.delete(1);
+//        System.out.println(response1 + " " + response2 + " " + response3);
+        
+        Student studentData = studentDao.getStudentData(2);
+        System.out.println(studentData);
     }
 }
